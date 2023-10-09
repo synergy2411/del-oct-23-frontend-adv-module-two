@@ -21,6 +21,7 @@ jQuery(document).ready(function () {
     // $("#drinks li").not(".item-1").addClass("border")
 
     $("#btnFetch").on("click", function () {
+
         // $(".header-container").load("./templates/header.html #second")
 
         $.get("http://localhost:3000/todos", function (data, statusText, xhr) {
