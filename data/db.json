@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "t01",
+      "label": "shopping",
+      "status": "pending"
+    },
+    {
+      "id": "t02",
+      "label": "planting",
+      "status": "completed"
+    },
+    {
+      "id": "t03",
+      "label": "grocery",
+      "status": "pending"
+    },
+    {
+      "title": "...",
+      "status": "pending",
+      "id": "J7qsAuq"
+    }
+  ]
+}
