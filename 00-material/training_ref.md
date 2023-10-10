@@ -15,23 +15,4 @@ X - Major Version : New fetuares added in the app with code base change
 Y - Minor Version : New features added in the app without code base change
 Z - Patch Version - bug fixes / performance improvements
 
-1.0.0
-1.0.1
-
-1.1.0
-
-5.3.0
-5.3.1
-5.3.2
-5.3.3
-5.3.4
-
-^ -> compatiable and accepted all patch version
-
-5.3.0
-5.4.0
-5.5.0
-
-~ -> compatiable and accepted all minor version
-
-semver.org
+semver.orgs
