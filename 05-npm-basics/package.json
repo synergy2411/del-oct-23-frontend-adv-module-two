@@ -1,0 +1,21 @@
+{
+  "name": "101-npm-basics",
+  "version": "0.0.1",
+  "description": "Awesome project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev:start": "nodemon src/index.js"
+  },
+  "keywords": [
+    "awesome",
+    "notes",
+    "app"
+  ],
+  "author": "SK",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "nodemon": "^3.0.1"
+  }
+}

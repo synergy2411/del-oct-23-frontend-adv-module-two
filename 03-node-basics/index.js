@@ -67,10 +67,21 @@
 
 
 
-const { sum, mul } = require("./utils/math");       // COMMONJS
+// const { sum, mul } = require("./utils/math");       // COMMONJS
 
-// import {sum, mul} from './utils/math';              // ESM
+// // import {sum, mul} from './utils/math';              // ESM
 
 
-console.log("Sum : ", sum(2, 4));
-console.log("Mul : ", mul(2, 4));
+// console.log("Sum : ", sum(2, 4));
+// console.log("Mul : ", mul(2, 4));
+
+
+
+console.log(process);
+
+setTimeout(() => {
+    console.log("One second left")
+}, 1000);
+
+console.log(__filename)
+console.log(__dirname)
