@@ -1,7 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import ExpenseForm from "./ExpenseForm/ExpenseForm";
 
 function Expenses() {
+  let [toggle, setToggle] = useState(false); // without re-initializing the state variables
+
   let expenses = [
     {
       id: "e001",
@@ -23,8 +26,22 @@ function Expenses() {
     },
   ];
 
+  const toggleClickHandler = () => setToggle(!toggle);
+
   return (
     <Fragment>
+      <div className="row">
+        <div className="col-4 offset-4">
+          <div className="d-grid">
+            <button className="btn btn-secondary" onClick={toggleClickHandler}>
+              {toggle ? "Hide" : "Show"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {toggle && <ExpenseForm />}
+
       <div className="row">
         <ExpenseItem expense={expenses[0]} />
 
