@@ -7,7 +7,6 @@ const ExpenseItem = ({ expense, children }) => {
         <div className="card-body">
           <h5 className="text-center">{expense.title.toUpperCase()}</h5>
           <p>Amount : ${expense.amount}</p>
-          <p>Date : {expense.createdAt.toString()}</p>
           <ExpenseDate createdAt={expense.createdAt} />
           {/* {children} */}
         </div>
