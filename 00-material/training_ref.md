@@ -16,3 +16,12 @@ Y - Minor Version : New features added in the app without code base change
 Z - Patch Version - bug fixes / performance improvements
 
 semver.orgs
+
+> npx create-react-app awesome-app
+
+# React Bootstrap Process
+
+- npm start > starts the webpack-dev-server
+- serves the public/index.html
+- webpack loads src/index.js
+- index.js imports App.js and load it as a component o nthe browser
