@@ -27,6 +27,10 @@ function Expenses() {
     <Fragment>
       <div className="row">
         <ExpenseItem expense={expenses[0]} />
+
+        {/* <ExpenseItem expense={expenses[0]}>
+          <p>The parent supplied paragraph</p>
+        </ExpenseItem> */}
         <ExpenseItem expense={expenses[1]} />
         <ExpenseItem expense={expenses[2]} />
       </div>
