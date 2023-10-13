@@ -28,6 +28,10 @@ function Expenses() {
 
   const toggleClickHandler = () => setToggle(!toggle);
 
+  const addNewExpense = (newExp) => {
+    console.log("PARENT : ", newExp);
+  };
+
   return (
     <Fragment>
       <div className="row">
@@ -40,7 +44,7 @@ function Expenses() {
         </div>
       </div>
 
-      {toggle && <ExpenseForm />}
+      {toggle && <ExpenseForm addNewExpense={addNewExpense} />}
 
       <div className="row">
         <ExpenseItem expense={expenses[0]} />
