@@ -2,34 +2,37 @@ import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 
+const INITIAL_EXPENSES = [
+  {
+    id: "e001",
+    title: "shopping",
+    amount: 19.9,
+    createdAt: new Date("Dec 21, 2022"),
+  },
+  {
+    id: "e002",
+    title: "planting",
+    amount: 28.9,
+    createdAt: new Date("Mar 20, 2023"),
+  },
+  {
+    id: "e003",
+    title: "grocery",
+    amount: 99.9,
+    createdAt: new Date("Aug 8, 2023"),
+  },
+];
+
 function Expenses() {
   let [toggle, setToggle] = useState(false); // without re-initializing the state variables
 
-  let expenses = [
-    {
-      id: "e001",
-      title: "shopping",
-      amount: 19.9,
-      createdAt: new Date("Dec 21, 2022"),
-    },
-    {
-      id: "e002",
-      title: "planting",
-      amount: 28.9,
-      createdAt: new Date("Mar 20, 2023"),
-    },
-    {
-      id: "e003",
-      title: "grocery",
-      amount: 99.9,
-      createdAt: new Date("Aug 8, 2023"),
-    },
-  ];
+  let [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
   const toggleClickHandler = () => setToggle(!toggle);
 
   const addNewExpense = (newExp) => {
-    console.log("PARENT : ", newExp);
+    setExpenses((prevExpense) => [newExp, ...prevExpense]);
+    setToggle(false);
   };
 
   return (
@@ -47,13 +50,9 @@ function Expenses() {
       {toggle && <ExpenseForm addNewExpense={addNewExpense} />}
 
       <div className="row">
-        <ExpenseItem expense={expenses[0]} />
-
-        {/* <ExpenseItem expense={expenses[0]}>
-          <p>The parent supplied paragraph</p>
-        </ExpenseItem> */}
-        <ExpenseItem expense={expenses[1]} />
-        <ExpenseItem expense={expenses[2]} />
+        {expenses.map((exp) => (
+          <ExpenseItem expense={exp} key={exp.id} />
+        ))}
       </div>
     </Fragment>
   );
