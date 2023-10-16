@@ -25,3 +25,10 @@ semver.orgs
 - serves the public/index.html
 - webpack loads src/index.js
 - index.js imports App.js and load it as a component o nthe browser
+
+# useEffect : side effect code.
+
+- useEffect(cb) : cb will execute for every rendering
+- useEffect(cb, []) : cb will execute at initial rendering ONLY.
+- useEffect(cb, [deps]) : cb will execute at initial rendering as well as whenever the dependency will change.
+- useEffect(cb => cleanUpFn, [deps])

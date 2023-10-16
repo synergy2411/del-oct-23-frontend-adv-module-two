@@ -1,4 +1,5 @@
 import Login from "./components/Demo/Login";
+import UseEffectDemo from "./components/Demo/UseEffectDemo";
 
 function App() {
   // const [show, setShow] = useState(true);
@@ -6,7 +7,9 @@ function App() {
     <div className="container">
       <h1>Hello React!!</h1>
 
-      <Login />
+      <UseEffectDemo />
+
+      {/* <Login /> */}
 
       {/* <button onClick={() => setShow(!show)}>Toggle Component</button> */}
       {/* {show && <ClassBased />} */}
