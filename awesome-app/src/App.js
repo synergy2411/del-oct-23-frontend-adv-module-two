@@ -1,15 +1,15 @@
-import { useState } from "react";
-import ClassBased from "./components/Demo/ClassBasedComp";
-import Expenses from "./components/Expenses/Expenses";
+import Login from "./components/Demo/Login";
 
 function App() {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   return (
     <div className="container">
       <h1>Hello React!!</h1>
 
-      <button onClick={() => setShow(!show)}>Toggle Component</button>
-      {show && <ClassBased />}
+      <Login />
+
+      {/* <button onClick={() => setShow(!show)}>Toggle Component</button> */}
+      {/* {show && <ClassBased />} */}
       {/* <Expenses /> */}
     </div>
   );
