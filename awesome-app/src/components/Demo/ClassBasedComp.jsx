@@ -4,6 +4,7 @@ class ClassBased extends Component {
   state = {
     show: false,
     count: 0,
+    todos: [],
   };
 
   showToggleHandler() {
@@ -21,6 +22,9 @@ class ClassBased extends Component {
 
   componentDidMount() {
     console.log("COMPONENT DID MOUNT");
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((todos) => this.setState({ todos }));
   }
 
   componentDidUpdate() {
@@ -31,11 +35,11 @@ class ClassBased extends Component {
     console.log("COMPONENT WILL UNMOUNT");
   }
 
-  shouldComponentUpdate() {
-    const rnd = (Math.random() * 10).toFixed(0);
-    console.log("SHOULD COMPONENT UPDATE", rnd);
-    return rnd > 3;
-  }
+  //   shouldComponentUpdate() {
+  //     const rnd = (Math.random() * 10).toFixed(0);
+  //     console.log("SHOULD COMPONENT UPDATE", rnd);
+  //     return rnd > 3;
+  //   }
 
   render() {
     console.log("RENDER");
@@ -53,6 +57,12 @@ class ClassBased extends Component {
           {this.state.count}
         </button>
         {this.state.show && <p>This is dynamic paragraph!</p>}
+
+        <ul>
+          {this.state.todos.map((todo) => (
+            <li key={todo.id}>{todo.title}</li>
+          ))}
+        </ul>
       </div>
     );
   }
