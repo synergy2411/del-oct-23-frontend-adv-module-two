@@ -3,6 +3,7 @@ import Login from "./components/Demo/Login";
 import ParentLogin from "./components/Demo/ParentLogin";
 import UseEffectDemo from "./components/Demo/UseEffectDemo";
 import AuthContext from "./context/auth-context";
+import Output from './components/Demo/Output';
 
 function App() {
   // const [show, setShow] = useState(true);
@@ -13,11 +14,16 @@ function App() {
     <div className="container">
       <h1>Hello React!!</h1>
 
-      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+
+
+      <Output />
+
+
+      {/* <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
 
         <ParentLogin />
 
-      </AuthContext.Provider>
+      </AuthContext.Provider> */}
 
 
       {/* <UseEffectDemo /> */}
