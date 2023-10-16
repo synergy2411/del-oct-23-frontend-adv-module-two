@@ -29,6 +29,10 @@ semver.orgs
 # useEffect : side effect code.
 
 - useEffect(cb) : cb will execute for every rendering
-- useEffect(cb, []) : cb will execute at initial rendering ONLY.
-- useEffect(cb, [deps]) : cb will execute at initial rendering as well as whenever the dependency will change.
-- useEffect(cb => cleanUpFn, [deps])
+- useEffect(cb, []) (componentDidMount) : cb will execute at initial rendering ONLY.
+- useEffect(cb, [deps]) (componentDidUpdate) : cb will execute at initial rendering as well as whenever the dependency will change.
+- useEffect(cb => cleanUpFn, [deps]) : cb will run at the initial rendering and follows below steps -
+  > mentioned dependency will change
+  > cleanUp function will run
+  > cb will execute
+  > cleanUp function also fire before detaching the component from DOM (componentWillUnmount)
