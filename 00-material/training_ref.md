@@ -36,3 +36,5 @@ semver.orgs
   > cleanUp function will run
   > cb will execute
   > cleanUp function also fire before detaching the component from DOM (componentWillUnmount)
+
+> json-server --watch db.json --port=3030

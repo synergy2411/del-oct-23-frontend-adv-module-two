@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": "t001",
+      "label": "pot the plants",
+      "status": "completed"
+    },
+    {
+      "id": "t002",
+      "label": "renew car insurance",
+      "status": "pending"
+    },
+    {
+      "id": "t003",
+      "label": "shop for jeans",
+      "status": "pending"
+    }
+  ]
+}
