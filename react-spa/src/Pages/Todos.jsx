@@ -21,19 +21,23 @@ const Todos = () => {
     fetchTodos().then((todos) => setTodos(todos));
   }, []);
 
-  const deleteItemHandler = async (todoId) => {
-    try {
-      await fetch(`http://localhost:3030/todos/${todoId}`, {
-        method: "DELETE",
-      });
+  // const deleteItemHandler = async (todoId) => {
+  //   try {
+  //     await fetch(`http://localhost:3030/todos/${todoId}`, {
+  //       method: "DELETE",
+  //     });
 
-      setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+  //     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
 
-      // fetchTodos().then(todos => setTodos(todos));
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     // fetchTodos().then(todos => setTodos(todos));
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  if (todos.length === 0) {
+    return <h2 className="display-4 text-center">📝 Write Your First Todo </h2>;
+  }
 
   return (
     <div className="row">

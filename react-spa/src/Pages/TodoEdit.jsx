@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./TodoEdit.module.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
 
 const TodoEdit = () => {
   const { todoId } = useParams();
@@ -35,7 +36,11 @@ const TodoEdit = () => {
   };
 
   if (todo === null) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="text-center">
+        <BounceLoader color="#36d7b7" />
+      </div>
+    );
   }
 
   if (todo) {

@@ -1,4 +1,4 @@
-import { Link, Outlet, NavLink } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         </nav>
       </header>
 
-      <div className='m-auto'>
+      <div className='mt-5'>
         <Outlet />
       </div>
       {/* Main Section */}

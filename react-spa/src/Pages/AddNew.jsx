@@ -43,7 +43,11 @@ const AddNew = () => {
             </div>
             <div className="col-4">
               <div className="d-grid">
-                <button className="btn btn-dark" type="submit">
+                <button
+                  className="btn btn-dark"
+                  type="submit"
+                  disabled={enteredLabel.trim() === ""}
+                >
                   Add
                 </button>
               </div>
