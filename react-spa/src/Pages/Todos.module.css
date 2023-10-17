@@ -1,0 +1,4 @@
+.my-list:hover {
+  background-color: grey;
+  cursor: pointer;
+}
