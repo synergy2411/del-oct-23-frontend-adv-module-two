@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Todos.module.css";
+import { useNavigate } from "react-router-dom";
 
 const fetchTodos = async () => {
   try {
@@ -13,6 +14,8 @@ const fetchTodos = async () => {
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchTodos().then((todos) => setTodos(todos));
@@ -40,7 +43,7 @@ const Todos = () => {
             <li
               className={`list-group-item mb-3 ${classes["my-list"]}`}
               key={todo.id}
-              onDoubleClick={() => deleteItemHandler(todo.id)}
+              onClick={() => navigate(todo.id)}
             >
               {todo.label.toUpperCase()}
             </li>

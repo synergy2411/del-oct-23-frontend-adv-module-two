@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Todos from './Pages/Todos';
 import ErrorPage from './Pages/ErrorPage';
 import AddNew from './Pages/AddNew';
+import TodoEdit from './Pages/TodoEdit';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,9 @@ const router = createBrowserRouter([
       }, {
         path: "new-todo",
         element: <AddNew />
+      }, {
+        path: "todos/:todoId",      // http://localhost:3000/todos/t001
+        element: <TodoEdit />
       }
     ]
   },
