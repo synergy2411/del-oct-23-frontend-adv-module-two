@@ -5,6 +5,7 @@ import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Todos from './Pages/Todos';
 import ErrorPage from './Pages/ErrorPage';
+import AddNew from './Pages/AddNew';
 
 
 const router = createBrowserRouter([
@@ -16,14 +17,13 @@ const router = createBrowserRouter([
       {
         path: "todos",        // http://localhost:3000/todos
         element: <Todos />
+      }, {
+        path: "new-todo",
+        element: <AddNew />
       }
     ]
   },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-
-  <RouterProvider router={router} />
-
-);
+root.render(<RouterProvider router={router} />);

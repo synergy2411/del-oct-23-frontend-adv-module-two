@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, NavLink } from 'react-router-dom'
 
 function App() {
   return (
@@ -9,10 +9,10 @@ function App() {
         <nav className='navbar navbar-nav'>
           <ul className='nav nav-tabs'>
             <li className='nav-item'>
-              <Link className='nav-link' to="todos">Todo List</Link>
+              <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="todos">Todo List</NavLink>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to="new-todo">Add New</Link>
+              <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="new-todo">Add New</NavLink>
             </li>
           </ul>
         </nav>

@@ -18,14 +18,16 @@ const Todos = () => {
   }, []);
 
   return (
-    <div className="container">
-      <ul className="list-group">
-        {todos.map((todo) => (
-          <li className="list-group-item" key={todo.id}>
-            {todo.label.toUpperCase()}
-          </li>
-        ))}
-      </ul>
+    <div className="row">
+      <div className="col-6 offset-3">
+        <ul className="list-group">
+          {todos.map((todo) => (
+            <li className="list-group-item" key={todo.id}>
+              {todo.label.toUpperCase()}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
