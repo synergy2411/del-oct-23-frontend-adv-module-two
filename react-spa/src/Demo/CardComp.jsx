@@ -1,6 +1,4 @@
 import React from "react";
-import CardTitle from "./CardTitle";
-import CardBody from "./CardBody";
 
 const CardComp = (props) => {
   return (

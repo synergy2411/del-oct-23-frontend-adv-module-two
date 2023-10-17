@@ -1,9 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import Dummy from './Demo/Dummy';
-import DummyTwo from './Demo/DummyTwo';
+import CardBody from './Demo/CardBody';
 import CardComp from './Demo/CardComp';
 import CardTitle from './Demo/CardTitle';
-import CardBody from './Demo/CardBody';
 
 function App() {
 
