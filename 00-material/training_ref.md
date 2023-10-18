@@ -38,3 +38,61 @@ semver.orgs
   > cleanUp function also fire before detaching the component from DOM (componentWillUnmount)
 
 > json-server --watch db.json --port=3030
+
+---
+
+# TypeScript
+
+- Extension of JavaScript with Types
+- Corporate Care-taker - Microsoft
+- ES6+ features
+- OOPS enabled
+- Angular itself created in typescript
+
+# Types in TypeScript
+
+- All JavaScript Types
+- any, unknown, null, undefined, never, void, tuple, union
+- Custom Types : type keyword, interface, classes.
+
+# Decorators
+
+- @Component({})
+- @Directive({})
+- @Pipe({})
+- @NgModule({})
+- @Injectable({})
+
+@Component({})
+class AppComponent {}
+
+@Directive({})
+class HighlightDirective {}
+
+@Pipe({})
+class DemoPipe{}
+
+@NgModule({})
+class AppModule{}
+
+@Injectable({})
+class DataService{}
+
+# Decorator Types -
+
+- Classes
+- Functions : @HostListener()
+- Properties : @Input(), @Output(), @HostBinding()
+- Parameters : @Optional(), @skip()
+
+# Angular CLI Tool - NG
+
+- npm install @angular/cli@14 -g
+
+- ng version
+
+- ng new angular-app
+
+- cd angular-app
+
+- npm start
