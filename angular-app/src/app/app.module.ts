@@ -10,10 +10,12 @@ import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
 import { UserCommentsComponent } from './user-comments/user-comments.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { DemoPipeComponent } from './demo/demo-pipe/demo-pipe.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
-    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent
+    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent, ReversePipe, FilterPipe
   ],
   imports: [      // Module
     BrowserModule,

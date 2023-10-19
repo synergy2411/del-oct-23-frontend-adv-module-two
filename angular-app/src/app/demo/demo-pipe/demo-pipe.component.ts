@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoPipeComponent implements OnInit {
 
-  contactNumber = 987654321;
+  contactNumber = "987654321";
+
+  filteredStatus = "";
+
+  todoCollection = [
+    { label: "shopping", status: "pending" },
+    { label: "grocery", status: "completed" },
+    { label: "planting", status: "pending" },
+    { label: "insurance", status: "completed" },
+  ]
 
 
+  addNew() {
+    this.todoCollection.push({ label: "New Item", status: "pending" });
+
+  }
   constructor() { }
 
   ngOnInit(): void {
