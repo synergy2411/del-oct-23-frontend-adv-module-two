@@ -8,10 +8,12 @@ import { UserImgComponent } from './users/user-img/user-img.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
 import { UserCommentsComponent } from './user-comments/user-comments.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
+import { DemoPipeComponent } from './demo/demo-pipe/demo-pipe.component';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
-    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent
+    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent
   ],
   imports: [      // Module
     BrowserModule,
