@@ -1,8 +1,20 @@
 <!-- <ng-content></ng-content> -->
 
 <h2>{{ user.firstName | titlecase }} {{ user.lastName | titlecase }}</h2>
-<p>Income : <span [innerText]="user.income | currency : 'INR'"></span></p>
-<p>
+
+<p
+  *ngIf="user.isWorking"
+  [ngClass]="dynamicClasses"
+  (mouseenter)="onMouseEnter()"
+>
+  Income : <span [innerText]="user.income | currency : 'INR'"></span>
+</p>
+
+<p
+  [ngStyle]="dynamicStyles"
+  (mouseenter)="dobMouseEnter()"
+  (mouseleave)="dobMouseLeave()"
+>
   Date of Birth :
   <span [innerHTML]="user.dob | date : 'dd/MM/yyyy'"></span>
 </p>

@@ -1,6 +1,9 @@
 <ul class="list-group">
-  <li class="list-group-item mb-4">
-    <div class="row">
+  <li
+    class="list-group-item mb-4"
+    *ngFor="let user of users; index as idx; first as isFirst; even as isEven"
+  >
+    <div class="row mb-3">
       <div class="col-3 text-center">
         <app-user-img
           [user]="user"
@@ -13,6 +16,12 @@
           <main>Main Content</main>
           <footer>Footer info</footer>
         </app-user-info>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-10 offset-1">
+        <app-user-comments [comments]="user.comments"></app-user-comments>
       </div>
     </div>
   </li>

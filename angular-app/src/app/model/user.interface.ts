@@ -1,3 +1,5 @@
+import { IComment } from "./comment.interface";
+
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -7,4 +9,5 @@ export interface IUser {
   dob: Date;
   img: string;
   votes: number;
+  comments: Array<IComment>
 }

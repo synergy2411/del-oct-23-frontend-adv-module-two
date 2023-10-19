@@ -1,4 +1,4 @@
-import { Input, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-life-cycle',
@@ -9,7 +9,9 @@ export class LifeCycleComponent implements OnInit, OnChanges, DoCheck, AfterCont
 
   @Input("title") title: string;
 
-  constructor() { }
+  constructor() {
+    console.log("Constructor")
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log("ngOnChanges")
