@@ -1,3 +1,5 @@
+<!-- <ng-content></ng-content> -->
+
 <h2>{{ user.firstName | titlecase }} {{ user.lastName | titlecase }}</h2>
 <p>Income : <span [innerText]="user.income | currency : 'INR'"></span></p>
 <p>
@@ -9,3 +11,5 @@
 
   <input type="number" [(ngModel)]="user.votes" />
 </p>
+
+<!-- <ng-content select="footer"></ng-content> -->

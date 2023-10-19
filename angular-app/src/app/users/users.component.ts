@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { IUser } from '../model/user.interface';
 
 @Component({
   selector: 'app-users',
@@ -8,7 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class UsersComponent {
 
-  user = {
+  user: IUser = {
     firstName: "bill",
     lastName: "gates",
     income: 50000,
@@ -21,7 +22,7 @@ export class UsersComponent {
 
 
   onMoreInfo(company: string) {
-    alert(`USer is working with ${company}`)
+    alert(`User is working with ${company}`)
   }
 
 }
