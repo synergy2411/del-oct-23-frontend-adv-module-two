@@ -25,7 +25,9 @@
     </ng-template>
   </div>
   <div *ngSwitchCase="'2'">
-    <h6>Form coming soon....</h6>
+    <app-comment-form
+      (newCommentEvent)="onAddNewComment($event)"
+    ></app-comment-form>
   </div>
   <div *ngSwitchDefault>Default Case</div>
 </div>

@@ -26,7 +26,9 @@
 <ul class="list-group">
   <li
     class="list-group-item"
-    *ngFor="let todo of todoCollection | sort : isAscending"
+    *ngFor="
+      let todo of todoCollection | filter : filteredStatus | sort : isAscending
+    "
   >
     {{ todo.label | uppercase }} -
     <span class="badge bg-primary float-end">{{ todo.status }}</span>

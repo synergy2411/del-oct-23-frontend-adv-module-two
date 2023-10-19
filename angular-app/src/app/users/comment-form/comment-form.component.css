@@ -1,0 +1,6 @@
+.ng-touched.ng-invalid[name="body"] {
+  border-bottom: 3px rgb(192, 95, 95) solid;
+}
+.ng-touched.ng-valid[name="body"] {
+  border-bottom: 3px rgb(56, 104, 56) solid;
+}

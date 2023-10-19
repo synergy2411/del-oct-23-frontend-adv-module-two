@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-8 offset-2">
+    <form #myForm="ngForm" (ngSubmit)="submitHandler(myForm)">
+      <!-- stars -->
+      <div class="form-group mb-2">
+        <select class="form-control" ngModel name="stars">
+          <option value="">Stars</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <!-- body -->
+      <div class="form-group mb-2">
+        <textarea
+          name="body"
+          rows="5"
+          class="form-control"
+          required
+          ngModel
+          minlength="5"
+        ></textarea>
+      </div>
+      <!-- author -->
+      <div class="form-group mb-2">
+        <input
+          type="email"
+          class="form-control"
+          name="author"
+          email
+          required
+          ngModel
+        />
+      </div>
+      <!-- button -->
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-secondary"
+          [disabled]="!myForm.valid"
+        >
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

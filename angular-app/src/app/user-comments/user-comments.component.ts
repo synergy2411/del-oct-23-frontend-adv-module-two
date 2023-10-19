@@ -12,6 +12,11 @@ export class UserCommentsComponent implements OnInit {
 
   tab = 1;
 
+  onAddNewComment(newComment: IComment) {
+    this.comments.push(newComment);
+    this.tab = 1
+  }
+
   constructor() { }
 
   ngOnInit(): void {
