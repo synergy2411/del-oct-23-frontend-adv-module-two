@@ -11,6 +11,8 @@ export class DemoPipeComponent implements OnInit {
 
   filteredStatus = "";
 
+  isAscending = true;
+
   todoCollection = [
     { label: "shopping", status: "pending" },
     { label: "grocery", status: "completed" },

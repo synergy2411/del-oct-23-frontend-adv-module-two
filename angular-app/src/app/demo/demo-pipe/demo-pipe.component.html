@@ -3,15 +3,22 @@
 <h1>{{ "Hello World" | reverse | uppercase }}</h1>
 
 <div class="row mb-5">
-  <div class="col-6">
+  <div class="col-4">
     <select class="form-control" [(ngModel)]="filteredStatus">
       <option value="pending">Pending</option>
       <option value="completed">Completed</option>
     </select>
   </div>
-  <div class="col-6">
+  <div class="col-4">
     <div class="d-grid">
       <button class="btn btn-primary" (click)="addNew()">Add New</button>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="d-grid">
+      <button class="btn btn-secondary" (click)="isAscending = !isAscending">
+        {{ isAscending ? "Sort Decending" : "Sort Ascending" }}
+      </button>
     </div>
   </div>
 </div>
@@ -19,7 +26,7 @@
 <ul class="list-group">
   <li
     class="list-group-item"
-    *ngFor="let todo of todoCollection | filter : filteredStatus"
+    *ngFor="let todo of todoCollection | sort : isAscending"
   >
     {{ todo.label | uppercase }} -
     <span class="badge bg-primary float-end">{{ todo.status }}</span>

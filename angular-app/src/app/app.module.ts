@@ -12,10 +12,11 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
 import { DemoPipeComponent } from './demo/demo-pipe/demo-pipe.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
-    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent, ReversePipe, FilterPipe
+    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent, ReversePipe, FilterPipe, SortPipe
   ],
   imports: [      // Module
     BrowserModule,
