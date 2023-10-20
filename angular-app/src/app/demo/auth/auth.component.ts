@@ -15,7 +15,8 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     this.authForm = new FormGroup({
       username: new FormControl("", [Validators.required, Validators.email]),
-      password: new FormControl("", [Validators.required, Validators.minLength(6), AuthComponent.hasExclamation])
+      password: new FormControl("", [Validators.required, Validators.minLength(6), AuthComponent.hasExclamation]),
+      cnfPassword: new FormControl("", [AuthComponent.cnfPasswordValidation])
     })
   }
 
@@ -27,6 +28,10 @@ export class AuthComponent implements OnInit {
     return this.authForm.get("password")
   }
 
+  get cnfPassword() {
+    return this.authForm.get("cnfPassword")
+  }
+
   onLogin() {
     console.log(this.authForm)
   }
@@ -35,6 +40,14 @@ export class AuthComponent implements OnInit {
   static hasExclamation(control: AbstractControl): ValidationErrors | null {
     const hasExclMark = control.value.indexOf("!") >= 0;
     return hasExclMark ? null : { hasexclamation: true }
+  }
+
+  static cnfPasswordValidation(control: AbstractControl) {
+    if (control.parent && control.parent.controls) {
+      const isMatched = control.parent.controls["password"].value === control.value;
+      return isMatched ? null : { cnfpassword: true }
+    }
+    return null;
   }
 
 }
