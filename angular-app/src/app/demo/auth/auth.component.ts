@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormArray, ValidationErrors, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -8,16 +8,20 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators }
 })
 export class AuthComponent implements OnInit {
 
+
   authForm: FormGroup;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.authForm = new FormGroup({
       username: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required, Validators.minLength(6), AuthComponent.hasExclamation]),
-      cnfPassword: new FormControl("", [AuthComponent.cnfPasswordValidation])
+      cnfPassword: new FormControl("", [AuthComponent.cnfPasswordValidation]),
+      hobbies: new FormArray([])
     })
+  }
+
+  ngOnInit(): void {
+
   }
 
   get username() {
@@ -32,10 +36,17 @@ export class AuthComponent implements OnInit {
     return this.authForm.get("cnfPassword")
   }
 
+  get hobbies() {
+    return this.authForm.get("hobbies") as FormArray;
+  }
+
   onLogin() {
     console.log(this.authForm)
   }
 
+  addHobby() {
+    this.hobbies.push(new FormGroup({ hobby: new FormControl(""), frequency: new FormControl("") }));
+  }
 
   static hasExclamation(control: AbstractControl): ValidationErrors | null {
     const hasExclMark = control.value.indexOf("!") >= 0;
