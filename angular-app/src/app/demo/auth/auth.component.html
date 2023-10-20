@@ -2,7 +2,7 @@
   <div class="col-6 offset-3">
     <div class="card">
       <div class="card-body">
-        <h2>Login / Resgitration Form</h2>
+        <h4 class="text-center">Login / Registration Form</h4>
         <form [formGroup]="authForm">
           <!-- username -->
           <div class="form-group">
@@ -40,6 +40,23 @@
                 formControlName="password"
               />
               <label for="password">Password:</label>
+              <div *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.hasError('required')">
+                  <p class="alert alert-danger">
+                    - Password is mandatory field
+                  </p>
+                </div>
+                <div *ngIf="password.hasError('minlength')">
+                  <p class="alert alert-danger">
+                    - Password should have atleast 6 characters
+                  </p>
+                </div>
+                <div *ngIf="password.hasError('hasexclamation')">
+                  <p class="alert alert-danger">
+                    - Password should have exclamation mark (!)
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- buttons -->
@@ -53,6 +70,13 @@
                     [disabled]="!authForm.valid"
                   >
                     Login
+                  </button>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-grid">
+                  <button class="btn btn-success" [disabled]="!authForm.valid">
+                    Register
                   </button>
                 </div>
               </div>
