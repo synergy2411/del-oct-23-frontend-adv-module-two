@@ -12,11 +12,11 @@
     <section *ngIf="comments.length !== 0; else NoCommentTemplate">
       <blockquote *ngFor="let comment of comments">
         <strong> Stars : {{ comment.stars }}</strong>
-        <div class="d-flex justify-content-between">
-          <p>{{ comment.body }}</p>
+        <!-- <div class="d-flex justify-content-between"> -->
+        {{ comment.body }}
 
-          <cite>- {{ comment.author }}</cite>
-        </div>
+        <cite class="float-end">- {{ comment.author }}</cite>
+        <!-- </div> -->
       </blockquote>
     </section>
 

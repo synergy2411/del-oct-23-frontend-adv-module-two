@@ -96,3 +96,19 @@ class DataService{}
 - cd angular-app
 
 - npm start
+
+fruits = [];
+
+fruits.push(newFruit); // Impure Change
+
+fruits = ["newFruit"]; // Pure Change
+
+let products = [
+{
+id : "",
+name : "",
+company : "",
+price : "",
+qty: ""
+}
+]
