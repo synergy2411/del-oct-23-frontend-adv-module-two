@@ -19,6 +19,10 @@ export class AuthComponent implements OnInit {
     })
   }
 
+  get username() {
+    return this.authForm.get("username")
+  }
+
   onLogin() {
     console.log(this.authForm)
   }

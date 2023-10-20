@@ -17,17 +17,11 @@
               />
               <label for="username">Username:</label>
             </div>
-            <div
-              *ngIf="
-                authForm.get('username').touched &&
-                authForm.get('username').invalid
-              "
-            >
-              * Some problem with username field
-              <div *ngIf="authForm.get('username').hasError('required')">
+            <div *ngIf="username.touched && username.invalid">
+              <div *ngIf="username.hasError('required')">
                 <p class="alert alert-danger">- Username is mandatory field</p>
               </div>
-              <div *ngIf="authForm.get('username').hasError('email')">
+              <div *ngIf="username.hasError('email')">
                 <p class="alert alert-danger">
                   - Username should be in proper email format
                 </p>
