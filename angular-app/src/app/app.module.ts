@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './demo/auth/auth.component';
@@ -19,6 +19,7 @@ import { CommentFormComponent } from './users/comment-form/comment-form.componen
 import { UserImgComponent } from './users/user-img/user-img.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UsersComponent } from './users/users.component';
+import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
@@ -30,7 +31,13 @@ import { UsersComponent } from './users/users.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  // providers: [CounterService],      // Service
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: LoggerInterceptor
+    }
+  ],      // Service
   bootstrap: [AppComponent]
 })
 export class AppModule { }
