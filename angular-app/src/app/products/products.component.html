@@ -1,0 +1,17 @@
+<p class="display-4">Products Page</p>
+
+<div class="row">
+  <div class="col-4">
+    <ul>
+      <li>
+        <a [routerLink]="['overview', '199', '89']">Overview</a>
+      </li>
+      <li>
+        <a [routerLink]="['specification']">Specification</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -23,10 +23,13 @@ import { UsersComponent } from './users/users.component';
 import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
+import { ProductsComponent } from './products/products.component';
+import { OverviewComponent } from './products/overview/overview.component';
+import { SpecificationComponent } from './products/specification/specification.component';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
-    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent, ReversePipe, FilterPipe, SortPipe, CommentFormComponent, AuthComponent, C1Component, C2Component, ObservableDemoComponent, HeaderComponent
+    AppComponent, UsersComponent, UserImgComponent, UserInfoComponent, LifeCycleComponent, UserCommentsComponent, CountryCodePipe, DemoPipeComponent, ReversePipe, FilterPipe, SortPipe, CommentFormComponent, AuthComponent, C1Component, C2Component, ObservableDemoComponent, HeaderComponent, ProductsComponent, OverviewComponent, SpecificationComponent
   ],
   imports: [      // Module
     BrowserModule,
