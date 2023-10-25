@@ -2,12 +2,17 @@
   <nav class="navbar navbar-nav">
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['login']">Login</a>
+        <a
+          class="nav-link"
+          [routerLink]="['login']"
+          *ngIf="!authService.isUserAuthenticated()"
+          >Login</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['pipe']">Pipe</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="authService.isUserAuthenticated()">
         <a class="nav-link" [routerLink]="['users']">Users</a>
       </li>
       <li class="nav-item">
