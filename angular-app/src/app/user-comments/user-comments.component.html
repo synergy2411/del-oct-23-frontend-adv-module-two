@@ -9,7 +9,7 @@
 
 <div [ngSwitch]="tab">
   <div *ngSwitchCase="'1'">
-    <section *ngIf="comments.length !== 0; else NoCommentTemplate">
+    <section *ngIf="comments?.length !== 0; else NoCommentTemplate">
       <blockquote *ngFor="let comment of comments">
         <strong> Stars : {{ comment.stars }}</strong>
         <!-- <div class="d-flex justify-content-between"> -->

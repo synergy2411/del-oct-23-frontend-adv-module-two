@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormArray, ValidationErrors, Validators, FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -11,7 +12,7 @@ export class AuthComponent implements OnInit {
 
   authForm: FormGroup;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.authForm = new FormGroup({
       username: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required, Validators.minLength(6), AuthComponent.hasExclamation]),
@@ -41,7 +42,8 @@ export class AuthComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.authForm)
+    this.authService.onLogin(this.username.value, this.password.value)
+    console.log("Authenticated : ", this.authService.isUserAuthenticated())
   }
 
   addHobby() {

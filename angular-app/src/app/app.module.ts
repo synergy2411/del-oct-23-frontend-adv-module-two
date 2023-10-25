@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { UsersComponent } from './users/users.component';
-import { UserImgComponent } from './users/user-img/user-img.component';
-import { UserInfoComponent } from './users/user-info/user-info.component';
-import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
-import { UserCommentsComponent } from './user-comments/user-comments.component';
-import { CountryCodePipe } from './pipes/country-code.pipe';
-import { DemoPipeComponent } from './demo/demo-pipe/demo-pipe.component';
-import { ReversePipe } from './pipes/reverse.pipe';
-import { FilterPipe } from './pipes/filter.pipe';
-import { SortPipe } from './pipes/sort.pipe';
-import { CommentFormComponent } from './users/comment-form/comment-form.component';
 import { AuthComponent } from './demo/auth/auth.component';
-import { DataService } from './services/data.service';
 import { C1Component } from './demo/c1/c1.component';
 import { C2Component } from './demo/c2/c2.component';
-import { CounterService } from './services/counter.service';
+import { DemoPipeComponent } from './demo/demo-pipe/demo-pipe.component';
+import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
 import { ObservableDemoComponent } from './demo/observable-demo/observable-demo.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { UserCommentsComponent } from './user-comments/user-comments.component';
+import { CommentFormComponent } from './users/comment-form/comment-form.component';
+import { UserImgComponent } from './users/user-img/user-img.component';
+import { UserInfoComponent } from './users/user-info/user-info.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
@@ -28,7 +27,8 @@ import { ObservableDemoComponent } from './demo/observable-demo/observable-demo.
   imports: [      // Module
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   // providers: [CounterService],      // Service
   bootstrap: [AppComponent]
