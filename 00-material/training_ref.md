@@ -112,3 +112,10 @@ price : "",
 qty: ""
 }
 ]
+
+---
+
+- Routes : configure the URL path with component
+- RouterModule : to submit route configuration to Angular
+- RouterLink : to create dynamic links (similar to anchor element)
+- RouterOutlet : to provide space on template to load the component
