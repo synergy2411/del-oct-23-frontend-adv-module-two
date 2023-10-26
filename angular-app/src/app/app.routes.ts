@@ -25,6 +25,9 @@ export const APP_ROUTES: Routes = [
       { path: "overview/:productId/:price", component: OverviewComponent },
       { path: "specification", component: SpecificationComponent }
     ]
+  }, {
+    path: "lazy",
+    loadChildren: () => import("./modules/lazy/lazy.module").then(m => m.LazyModule)
   }
 
 ]

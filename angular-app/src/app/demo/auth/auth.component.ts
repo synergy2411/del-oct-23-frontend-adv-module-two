@@ -43,6 +43,7 @@ export class AuthComponent implements OnInit {
 
   onLogin() {
     this.authService.onLogin(this.username.value, this.password.value)
+    debugger;
     console.log("Authenticated : ", this.authService.isUserAuthenticated())
   }
 

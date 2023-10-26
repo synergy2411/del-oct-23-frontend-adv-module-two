@@ -119,3 +119,15 @@ qty: ""
 - RouterModule : to submit route configuration to Angular
 - RouterLink : to create dynamic links (similar to anchor element)
 - RouterOutlet : to provide space on template to load the component
+- ActivatedRoute Service : access of active route
+- Router Service : navigating the user programmatically
+
+- Nested Routing
+  www.example.com/products/overview
+  www.example.com/products/specification
+
+- Route Parameter
+- Gaurds
+- Modules
+
+  www.example.com/products/99/overview?price=199

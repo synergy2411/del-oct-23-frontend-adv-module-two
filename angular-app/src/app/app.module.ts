@@ -26,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { OverviewComponent } from './products/overview/overview.component';
 import { SpecificationComponent } from './products/specification/specification.component';
+import { EagerModule } from './modules/eager/eager.module';
 
 @NgModule({
   declarations: [     // Component / Directive / Pipes
@@ -36,7 +37,8 @@ import { SpecificationComponent } from './products/specification/specification.c
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    EagerModule
   ],
   providers: [
     {
